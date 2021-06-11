@@ -217,6 +217,7 @@ console.log(artists[2].bio);
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+
 // artists.splice(8, 1, 'Vincent Van Gogh');
 
 // console.log (artists);
@@ -244,9 +245,16 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-/*Your Code Here*/
-}
+function get20s(array){
+  const results = [];
+    for(let i = 0; i < array.length; i++){
+      let str = array[i].years.split(' - ')
+      if(str[0] >= 1900 && str[1] <= 2000){
+        results.push(array[i].name);
+      }
+    }
+    return results;
+  }
 
 
 
